@@ -2,6 +2,8 @@ package io.github.n0g4y0.geoquiz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -19,14 +21,22 @@ class MainActivity : AppCompatActivity() {
         falseButton = findViewById(R.id.false_button)
 
         trueButton.setOnClickListener { view: View ->
-            Toast.makeText(this, R.string.correct_toast, Toast.LENGTH_SHORT).show()
+
+            mostrarMsj(R.string.correct_toast)
         }
 
         falseButton.setOnClickListener { view: View ->
-            Toast.makeText(this, R.string.incorrect_toast , Toast.LENGTH_SHORT).show()
+            mostrarMsj(R.string.incorrect_toast)
         }
 
 
 
+    }
+
+    private fun mostrarMsj(msjID: Int){
+        val msj = Toast.makeText(this, msjID, Toast.LENGTH_SHORT)
+        // con este metodo, cambio la direccion donde se mostrar el TOAST
+        msj.setGravity(Gravity.TOP,0,150)
+        msj.show()
     }
 }
