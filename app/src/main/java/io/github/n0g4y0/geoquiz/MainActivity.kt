@@ -76,3 +76,10 @@ class MainActivity : AppCompatActivity() {
 
 }
 
+/*
+* hasta este punto, debemos ya podemos correr el programa, en el emulador o el dispositivo:
+* mas documentacion sobre eso: fijarse en:
+*
+* https://developer.android.com/studio/run/device
+*
+* */
