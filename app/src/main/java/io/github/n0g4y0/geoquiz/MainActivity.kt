@@ -37,6 +37,15 @@ class MainActivity : AppCompatActivity() {
         questionTextView = findViewById(R.id.question_text_view)
 
 
+        // para cumplir con el desafio, de agregar un escucha (LISTENER) al widget:
+        questionTextView.setOnClickListener {
+            // con esta linea, hace que la lista siga vuelva a cero, cuando llegue al ultimo ITEM:
+            currentIndex = (currentIndex + 1) % questionBank.size
+            updateQuestion()
+
+        }
+
+
 
         trueButton.setOnClickListener { view: View ->
             checkAnswer(true)
