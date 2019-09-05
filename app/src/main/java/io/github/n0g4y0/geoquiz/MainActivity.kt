@@ -7,6 +7,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
+// agregando una variable constante, para trabajar con los LOGs:
+
+private const val TAG = "MainActivity"
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var trueButton: Button
