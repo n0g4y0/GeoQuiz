@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nextButton: Button
     private lateinit var questionTextView: TextView
 
+    private val quizViewModel: QuizViewModel by lazy {
+        ViewModelProviders.of(this).get(QuizViewModel::class.java)
+    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +32,6 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG,"onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
-        val provider: ViewModelProvider = ViewModelProviders.of(this)
-        val quizViewModel = provider.get(QuizViewModel::class.java)
-        Log.d(TAG, "Got a QuizModelView: $quizViewModel")
 
 
         trueButton = findViewById(R.id.true_button)
