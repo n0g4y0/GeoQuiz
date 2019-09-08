@@ -3,7 +3,7 @@ package io.github.n0g4y0.geoquiz
 import android.util.Log
 import androidx.lifecycle.ViewModel
 
-private const val TAG = "QuizModelView"
+private const val TAG = "QuizViewModel"
 
 class QuizViewModel : ViewModel() {
 
