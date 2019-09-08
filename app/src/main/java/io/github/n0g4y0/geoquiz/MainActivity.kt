@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         nextButton.setOnClickListener {
             // con esta linea, hace que la lista siga vuelva a cero, cuando llegue al ultimo ITEM:
-            currentIndex = (currentIndex + 1) % questionBank.size
+            quizViewModel.moveToNext()
             updateQuestion()
         }
 
@@ -88,14 +88,14 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun updateQuestion(){
-        val questionTextResId = questionBank[currentIndex].textResId
+        val questionTextResId = quizViewModel.currentQuestionText
         questionTextView.setText(questionTextResId)
 
     }
 
     private fun checkAnswer(userAnswer:Boolean){
 
-        val correctAnswer = questionBank[currentIndex].answer
+        val correctAnswer = quizViewModel.currentQuestionAnswer
 
         val messageResId = if (userAnswer == correctAnswer) {
             R.string.correct_toast
