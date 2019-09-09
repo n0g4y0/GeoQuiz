@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import java.lang.Exception
 
 // agregando una variable constante, para trabajar con los LOGs:
 
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         nextButton.setOnClickListener {
             // con esta linea, hace que la lista siga vuelva a cero, cuando llegue al ultimo ITEM:
-            quizViewModel.moveToNext()
+            //quizViewModel.moveToNext()
             updateQuestion()
         }
 
@@ -104,6 +105,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun updateQuestion(){
+        Log.d(TAG,"updating question text",Exception())
         val questionTextResId = quizViewModel.currentQuestionText
         questionTextView.setText(questionTextResId)
 
