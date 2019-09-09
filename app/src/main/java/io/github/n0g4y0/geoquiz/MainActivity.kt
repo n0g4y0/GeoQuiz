@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         falseButton = findViewById(R.id.false_button)
 
         nextButton = findViewById(R.id.next_button)
-        questionTextView = findViewById(R.id.question_text_view)
+        //questionTextView = findViewById(R.id.question_text_view)
 
 
 
