@@ -14,6 +14,9 @@ import androidx.lifecycle.ViewModelProviders
 
 private const val TAG = "MainActivity"
 
+//
+private const val KEY_INDEX = "index"
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var trueButton: Button
@@ -74,6 +77,16 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Log.d(TAG,"onPause() called")
 
+    }
+
+    /*
+    * SOBRE-escribimos esta funcion, para enviar el valor de -> currenIndex, en el BUNDLE, la CONSTANTE es la
+    * llave CLAVE para recuperar el valor.
+    * */
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.i(TAG,"onSaveInstanceState")
+        outState.putInt(KEY_INDEX,quizViewModel.currentIndex)
     }
 
     override fun onStop() {
