@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
     private lateinit var nextButton: Button
+    private lateinit var cheatButton: Button
     private lateinit var questionTextView: TextView
 
     private val quizViewModel: QuizViewModel by lazy {
@@ -45,6 +46,9 @@ class MainActivity : AppCompatActivity() {
         falseButton = findViewById(R.id.false_button)
 
         nextButton = findViewById(R.id.next_button)
+
+        cheatButton = findViewById(R.id.cheat_button)
+
         questionTextView = findViewById(R.id.question_text_view)
 
 
@@ -61,6 +65,10 @@ class MainActivity : AppCompatActivity() {
             // con esta linea, hace que la lista siga vuelva a cero, cuando llegue al ultimo ITEM:
             quizViewModel.moveToNext()
             updateQuestion()
+        }
+
+        cheatButton.setOnClickListener {
+            // Start cheatActivity
         }
 
         updateQuestion()
