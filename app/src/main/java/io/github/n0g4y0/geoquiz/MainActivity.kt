@@ -1,5 +1,6 @@
 package io.github.n0g4y0.geoquiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -69,6 +70,8 @@ class MainActivity : AppCompatActivity() {
 
         cheatButton.setOnClickListener {
             // Start cheatActivity
+            val intent = Intent(this,CheatActivity::class.java)
+            startActivity(intent)
         }
 
         updateQuestion()
