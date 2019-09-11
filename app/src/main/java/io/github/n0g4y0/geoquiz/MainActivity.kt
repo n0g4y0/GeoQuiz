@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         nextButton.setOnClickListener {
             // con esta linea, hace que la lista siga vuelva a cero, cuando llegue al ultimo ITEM:
+            quizViewModel.isCheater = false
             quizViewModel.moveToNext()
             updateQuestion()
         }
