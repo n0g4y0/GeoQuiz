@@ -1,6 +1,7 @@
 package io.github.n0g4y0.geoquiz
 
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -72,10 +73,12 @@ class MainActivity : AppCompatActivity() {
             updateQuestion()
         }
 
-        cheatButton.setOnClickListener {
+        cheatButton.setOnClickListener {view ->
             // Start cheatActivity
             val answerIsTrue = quizViewModel.currentQuestionAnswer
             val intent = CheatActivity.newIntent(this@MainActivity,answerIsTrue)
+            val options = ActivityOptions
+                .makeClipRevealAnimation(view,0,0,view.width,view.height)
             startActivityForResult(intent, REQUEST_CODE_CHEAT )
         }
 
