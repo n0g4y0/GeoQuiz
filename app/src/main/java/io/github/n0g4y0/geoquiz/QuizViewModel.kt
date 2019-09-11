@@ -17,6 +17,7 @@ class QuizViewModel : ViewModel() {
     var currentIndex = 0
     // agregando una variable, que tedira si el usuario hizo trampa (CHEAT):
     var isCheater = false
+    var apretoElBoton = false
 
     private val questionBank = listOf(
         Question(R.string.question_australia,true),
