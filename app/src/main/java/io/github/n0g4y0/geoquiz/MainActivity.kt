@@ -160,3 +160,12 @@ class MainActivity : AppCompatActivity() {
 * https://developer.android.com/studio/run/device
 *
 * */
+
+/*
+* la distribucion de versiones de android, que cambian mes a mes:
+* https://developer.android.com/about/dashboards/index.html
+*
+* documentacion, para ver los potenciales problemas que se pueden encontrar en cada version de android:
+* https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+*
+* */
