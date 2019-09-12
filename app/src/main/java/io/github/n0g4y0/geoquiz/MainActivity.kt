@@ -81,6 +81,8 @@ class MainActivity : AppCompatActivity() {
             val intent = CheatActivity.newIntent(this@MainActivity,answerIsTrue)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                // este condigo funciona para personalizar el como quieres que se inicie el ACTIVITY
+                // en este caso, utiliza una animacion de revelacion.
                 val options = ActivityOptions
                     .makeClipRevealAnimation(view,0,0,view.width,view.height)
                 startActivityForResult(intent, REQUEST_CODE_CHEAT,options.toBundle())
@@ -178,7 +180,15 @@ class MainActivity : AppCompatActivity() {
 * la distribucion de versiones de android, que cambian mes a mes:
 * https://developer.android.com/about/dashboards/index.html
 *
+* las versiones de android, para hacer declaraciones condicionales:
+*
+* https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+*
 * documentacion, para ver los potenciales problemas que se pueden encontrar en cada version de android:
 * https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+*
+* documentacion principal de android:
+*
+* https://developer.android.com/
 *
 * */
